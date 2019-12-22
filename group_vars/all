@@ -1,0 +1,19 @@
+user:
+    name: USERNAME
+    uid: 1000
+    group: GROUPNAME
+    shell: /path/to/your/shell
+    email: YOUR_NAME@DOMAIN.TLD
+
+base_packages:
+    - base-devel
+    - tmux
+    - git
+    - rsync
+    - lsof
+    - jq
+    - htop
+
+editors:
+    - gvim
+    - code
