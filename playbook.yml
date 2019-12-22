@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+  - base
+  - archive
+  - editors
+  - browsers
+  - multimedia
+  - network
+  - office
+  - docker
+
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"

@@ -1,0 +1,5 @@
+---
+- name: Install editors
+  pacman:
+    name: ['vim', 'code']
+    state: present

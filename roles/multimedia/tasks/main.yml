@@ -1,0 +1,17 @@
+---
+- name: Install misc media codecs and helpers
+  pacman:
+    name:
+      - flac
+      - lame
+      - gst-libav
+      - gst-plugins-good
+      - exiv2
+      - perl-image-exiftool
+      - opus-tools
+    state: present
+
+- name: Install darktable
+  pacman: name=darktable state=present
+  tags:
+    - darktable

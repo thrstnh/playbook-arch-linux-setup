@@ -1,0 +1,45 @@
+---
+- name: Refresh pacman mirrors
+  pacman:
+    update_cache: yes
+
+- name: Install universal base packages
+  pacman:
+      name: "{{ base_packages }}"
+      state: present
+  tags:
+    - packages
+
+- name: Install Bash
+  pacman:
+    name:
+      - bash
+      - bash-completion
+    state: present
+  tags:
+    - shell
+
+- name: Install ZSH
+  pacman:
+    name:
+      - zsh
+      - zsh-completions
+    state: present
+  tags:
+    - shell
+
+- name: Install sudo
+  pacman:
+    name: sudo
+    state: present
+  tags:
+    - sudo
+
+- name: Add user to wheel group
+  user:
+    name: "{{ user.name }}"
+    groups: wheel
+    append: yes
+  tags:
+    - sudo
+    - user
